@@ -114,8 +114,6 @@ private slots:
 
     void on_preset_save_clicked();
 
-    void on_preset_load_clicked();
-
     void on_preset_import_clicked();
 
     void on_preset_export_clicked();

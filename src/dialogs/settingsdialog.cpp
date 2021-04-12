@@ -643,7 +643,20 @@ void SettingsDialog::on_list_symbol_currentIndexChanged(int index)
 
 void SettingsDialog::on_presets_currentIndexChanged(int index)
 {
-    this->ui->preset_load->setEnabled(index >= 0);
+    QString name = this->ui->presets->currentText();
+    if(name.isEmpty())
+        return;
+
+    bool theme_changed = false; // TODO
+    if (theme_changed) {
+        auto response = QMessageBox::question(this, "Kristall", tr("Do you want to load the style '%1'?\r\nThis will discard all currently set up values!").arg(name));
+        if(response != QMessageBox::Yes)
+            return;
+    }
+
+    this->setGeminiStyle(this->predefined_styles.value(name));
+
+    // ???
     this->ui->preset_save->setEnabled(index >= 0);
     this->ui->preset_export->setEnabled(index >= 0);
 }
@@ -689,21 +702,6 @@ void SettingsDialog::on_preset_save_clicked()
 
     this->predefined_styles.insert(name, this->current_style);
 }
-
-
-void SettingsDialog::on_preset_load_clicked()
-{
-    QString name = this->ui->presets->currentText();
-    if(name.isEmpty())
-        return;
-
-    auto response = QMessageBox::question(this, "Kristall", QString(tr("Do you want to load the style '%1'?\r\nThis will discard all currently set up values!")).arg(name));
-    if(response != QMessageBox::Yes)
-        return;
-
-    this->setGeminiStyle(this->predefined_styles.value(name));
-}
-
 
 void SettingsDialog::on_SettingsDialog_accepted()
 {

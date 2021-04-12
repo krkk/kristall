@@ -1438,19 +1438,6 @@
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="preset_load">
-               <property name="toolTip">
-                <string>Load preset</string>
-               </property>
-               <property name="text">
-                <string>Load</string>
-               </property>
-               <property name="icon">
-                <iconset theme="folder"/>
-               </property>
-              </widget>
-             </item>
-             <item>
               <widget class="QToolButton" name="preset_import">
                <property name="toolTip">
                 <string>Imports preset…</string>
@@ -1610,7 +1597,6 @@
   <tabstop>presets</tabstop>
   <tabstop>preset_new</tabstop>
   <tabstop>preset_save</tabstop>
-  <tabstop>preset_load</tabstop>
   <tabstop>preset_import</tabstop>
   <tabstop>preset_export</tabstop>
   <tabstop>preview_url</tabstop>
