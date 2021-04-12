@@ -77,15 +77,10 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     }
 
     this->ui->presets->clear();
+    this->ui->presets->addItem(tr("[Current Style]"));
     for(auto const & style_name : this->predefined_styles.keys())
     {
         this->ui->presets->addItem(style_name);
-    }
-
-    if(this->predefined_styles.size() > 0) {
-        on_presets_currentIndexChanged(0);
-    } else {
-        this->on_presets_currentIndexChanged(-1);
     }
 
     this->ui->redirection_mode->clear();
@@ -654,7 +649,11 @@ void SettingsDialog::on_presets_currentIndexChanged(int index)
             return;
     }
 
-    this->setGeminiStyle(this->predefined_styles.value(name));
+    if (index == 0) {
+        this->setGeminiStyle(kristall::globals().document_style);
+    } else {
+        this->setGeminiStyle(this->predefined_styles.value(name));
+    }
 
     // ???
     this->ui->preset_save->setEnabled(index >= 0);
