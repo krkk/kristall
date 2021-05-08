@@ -42,7 +42,7 @@ Unsupported Versions: 16.04
   - `qt5-qmake`
   - `qttools5-dev-tools`
   - `qtmultimedia5-dev`
-  - `libqt5svg5-dev`
+  - `libqt5svg5`
   - `libssl-dev`
   - `make`
   - `g++`
@@ -63,7 +63,7 @@ This is because Fedora has a different naming scheme for the qmake executable.
     - `qt5-qtbase`
     - `qt5-qtbase-devel`
     - `qt5-qtmultimedia-devel`
-    - `qt5-qtsvg-devel`
+    - `qt5-qtsvg`
     - `qt5-linguist`
     - `ccache-3.7.7-1.fc32.x86_64`
     - `make`
@@ -84,7 +84,7 @@ This is because Fedora has a different naming scheme for the qmake executable.
 - Required packages for 0.3
   - `qt5-qtbase-dev`
   - `qtchooser`
-  - `qt5-qtsvg-dev`
+  - `qt5-qtsvg`
   - `qt5-qtmultimedia-dev`
 - Additionally for current state (38b353e)
   - `qt5-qttools-dev`
